@@ -24,3 +24,9 @@ POST — users | createUser()
 PUT — /users/:id | updateUser()
 DELETE — /users/:id | deleteUser()
 
+open heroku database from terminal
+> heroku pg:psql -a rapid-poll
+
+use file to execute commands in heroku database
+> cat database.sql | heroku pg:psql -a rapid-poll
+| pipe is used to take output from previous command and give as input to next command.
