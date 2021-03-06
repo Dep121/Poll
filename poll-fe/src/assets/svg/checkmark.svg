@@ -1,0 +1,16 @@
+<svg
+  fill="#000000"
+  viewBox="0 0 30 30"
+  width="30px"
+  height="30px"
+>
+  <path
+    fill="none"
+    stroke="stroke"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-miterlimit="10"
+    stroke-width="3"
+    d="M4 16L11 23 27 7"
+  />
+</svg>

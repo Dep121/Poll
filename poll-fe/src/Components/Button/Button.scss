@@ -1,0 +1,22 @@
+@use '../../commonStyles/variables' as v;
+
+.btn {
+    all: none;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+
+    @include v.color-mixin(primary, on-primary);
+
+    @include v.fontStyle(12px, 700);
+
+    &-filled{
+        @include v.color-mixin(on-primary, primary);
+    }
+
+    &-big {
+        width: max-content;
+        padding: 20px;
+        @include v.fontStyle(2rem, bold);
+    }
+}

@@ -1,0 +1,117 @@
+
+// $themes: (
+//   light: (
+//     backgroundLight: #fff,
+//     backgroundDark: #f7f7f8,
+//     textColor: #fff,
+//     textDark: #000,
+//     textLight: #919394,
+//     contentColor: #b9baba,
+//     iconColor: #000
+//   ),
+//   dark: (
+//     backgroundLight: #131b1f,
+//     backgroundDark: #000,
+//     textColor: #fff,
+//     textDark: #fff,
+//     textLight: #b9baba,
+//     iconColor: #fff
+//   )
+// );
+
+$themes: (
+  light: (
+    primary: #485922,
+    secondary: #798c35,
+    surface: #ffffff,
+    background: #ffffff,
+    border: #121212,
+    LText: #B9B8B8,
+
+    on-primary: #ffffff,
+    on-secondary: #000000,
+    on-surface: #000000,
+    on-background: #000000,
+
+    // states
+    error: #b00020,
+    on-error: #ffffff,
+  ),
+  dark: (
+    primary: #485922,
+    secondary: #798c35,
+    surface: #121212,
+    background: #121212,
+    border: #363636,
+
+    on-primary: #000000,
+    on-secondary: #000000,
+    on-surface: #ffffff,
+    on-background: #ffffff,
+
+    // states
+    error: #b00020,
+    on-error: #000000,
+  ),
+);
+
+$color-schemes: (
+  scheme-default: (
+    backgroundColor: #00b4ff,
+  ),
+  scheme-cs1: (
+    backgroundColor: #e68a00,
+  )
+);
+
+$array-map: null;
+
+@mixin customize($arg: theme) {
+  $array: $themes;
+  $prefix: theme;
+
+  @if ($arg == theme) {
+    $array: $themes;
+    $prefix: theme;
+  } @else {
+    $array: $color-schemes;
+    $prefix: color;
+  }
+
+  @each $theme, $map in $array {
+    .#{$prefix}-#{$theme} & {
+      $array-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($array, $theme), "#{$key}");
+        $array-map: map-merge(
+          $array-map,
+          (
+            $key: $value
+          )
+        ) !global;
+      }
+
+      @content;
+      $array-map: null !global;
+    }
+  }
+}
+
+@function getValue($key) {
+  // @debug "array-map: `#{inspect($array-map)}`";
+  @return map-get($array-map, $key);
+}
+
+.demo {
+  @include customize(theme) {
+    color: getValue(primary);
+  }
+  width: 100%;
+
+  .demo1 {
+    @include customize(theme) {
+        color: getValue(on-surface);
+        border-bottom: 1px solid getValue(border);
+    }
+  }
+}

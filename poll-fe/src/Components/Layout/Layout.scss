@@ -1,0 +1,10 @@
+// @use '../../commonStyles/theme' as t;
+@use '../../commonStyles/variables' as v;
+
+.layout {
+    .child {
+        height: 70vh;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}

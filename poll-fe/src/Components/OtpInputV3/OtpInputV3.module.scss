@@ -1,0 +1,43 @@
+@use '../../commonStyles/variables' as v;
+// @use '../../commonStyles/theme' as t;
+
+.inputWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 7px;
+}
+
+.inputOtp {
+    appearance: none;
+    width: 11%;
+    text-align: center;
+    border: none;
+    @include v.fontStyle(1.5rem, 600);
+    // @include t.customize(theme) {
+    //     color: t.getValue(on-surface);
+    //     border-bottom: 1px solid t.getValue(border);
+    // }
+    border-bottom: 1px solid var(--color-border);
+    padding: 5px;
+
+    &--error {
+        // @include t.customize(theme) {
+        //     border-bottom-color: t.getValue(on-error);
+        // }
+        border-bottom-color: var(--color-on-error);
+        &:focus {
+            // @include t.customize(theme) {
+            //     border-bottom-color: t.getValue(on-error);
+            // }
+            border-bottom-color: var(--color-on-error);
+        }
+    }
+}
+
+.error {
+    // @include t.customize(theme) {
+    //     color: t.getValue(on-error);
+    // }
+    color: var(--color-on-error);
+}

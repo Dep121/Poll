@@ -1,0 +1,31 @@
+@use '../../commonStyles/variables' as v;
+@use '../../commonStyles/theme' as t;
+
+.input-box {
+    margin-top: 15px;
+    width: 100%;
+    label {
+        @include v.fontStyle(1.2rem, 300);
+    }
+    .input {
+        display: block;
+        margin-top: 5px;
+        width: 100%;
+        border: 1px solid;
+        border-radius: 5px;
+        padding: 20px;
+        @include v.fontStyle(1.5rem, 300);
+
+        &--active{
+            @include t.customize(theme) {
+                border-color: t.getValue(border);
+            }
+            box-shadow: 0 0 9px 3px v.$LGrey;
+        }
+        &--error{
+            @include t.customize(theme) {
+                border-color: t.getValue(error);
+            }
+        }
+    }
+}

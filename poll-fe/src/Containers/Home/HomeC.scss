@@ -1,0 +1,19 @@
+@use '../../commonStyles/variables' as v;
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+
+  .txt {
+    @include v.fontStyle(2.5rem, 500);
+    margin-bottom: 50px;
+  }
+
+  .msg {
+    margin-top: 50px;
+    @include v.color-mixin(LText);
+    @include v.fontStyle(14px, false);
+  }
+}

@@ -1,0 +1,26 @@
+https://blog.logrocket.com/nodejs-expressjs-postgresql-crud-rest-api-example/
+
+CREATE ROLE admin WITH LOGIN PASSWORD 'admin';
+alter role admin CREATEDB;
+
+use below cmd to login.
+psql -d postgres -U admin -h localhost
+
+
+CREATE TABLE users (
+  ID SERIAL PRIMARY KEY,
+  name VARCHAR(30),
+  email VARCHAR(30)
+);
+
+INSERT INTO users (name, email)
+  VALUES ('Deepak', 'deepak@example.com'), ('George', 'geroge@example.com');
+
+
+GET — / | displayHome()
+GET — /users | getUsers()
+GET — /users/:id | getUserById()
+POST — users | createUser()
+PUT — /users/:id | updateUser()
+DELETE — /users/:id | deleteUser()
+

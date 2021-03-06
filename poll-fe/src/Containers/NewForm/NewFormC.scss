@@ -1,0 +1,17 @@
+@use '../../commonStyles/variables' as v;
+
+.new-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+
+  h1{
+    @include v.color-mixin(primary);
+    @include v.fontStyle(38px, false);
+  }
+
+  .msg {
+    @include v.color-mixin(LText);
+
+  }
+}

@@ -1,0 +1,30 @@
+.listitem {
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid var(--color-on-surface);
+	margin: 5px;
+	padding: 5px;
+  .left {
+		text-align: center;
+		width: 20%;
+  }
+  .middle {
+		text-align: left;
+		width: 50%;
+
+		.heading {
+			font-weight: 900;
+			margin-bottom: 10px;
+		}
+
+		.subHeading {
+			font-weight: 300;
+			font-size: 0.8rem;
+			color: var(--color-on-surface);
+		}
+  }
+  .right {
+		width: 30%;
+		text-align: right;
+  }
+}

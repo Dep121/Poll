@@ -1,0 +1,26 @@
+.arrow {
+    width: 5px;
+    height: 5px;
+    border: 1px solid var(--color-primary);
+    transform: rotate(45deg);
+}
+
+.dArrow {
+    border-top: none;
+    border-left: none;
+}
+
+.upArrow {
+    border-bottom: none;
+    border-right: none;
+}
+
+.rArrow {
+    border-left: none;
+    border-bottom: none;
+}
+
+.lArrow {
+    border-top: none;
+    border-right: none;
+}

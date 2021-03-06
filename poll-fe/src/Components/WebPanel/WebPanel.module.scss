@@ -1,0 +1,17 @@
+.pn {
+  $pad: 50px;
+  height: 100%;
+  padding: $pad;
+  &-t{
+    padding-top: 0;
+  }
+  &-l{
+    padding-left: 0;
+  }
+  &-r{
+    padding-right: 0;
+  }
+  &-b{
+    padding-bottom: 0;
+  }
+}

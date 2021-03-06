@@ -1,0 +1,56 @@
+@use 'palette' as p;
+@use 'theme' as t;
+
+$Black: #1d252d;
+$DGrey: #506d85;
+$LGrey: #B9B8B8;
+
+//brand base colors;
+$primary: #485922;
+$secondary: #798c35;
+$surface: #ffffff;
+$background: #ffffff;
+
+$on-primary: #ffffff;
+$on-secondary: #000000;
+$on-surface: #000000;
+$on-background: #000000;
+
+// states
+$error: #b00020;
+$on-error: #ffffff;
+
+$tertiary: #b4bf5e;
+$black: #242614;
+$DGrey: #121212;
+$white: #f2f2f2;
+
+//brand base palette
+$primary-palette: p.palette($primary);
+$secondary-palette: p.palette($secondary);
+
+// @warn "primary palette: `#{inspect($primary-palette)}`";
+// @warn "secondary palette: `#{inspect($secondary-palette)}`";
+
+@mixin fontStyle($size: false, $weight: false) {
+  @if $size {
+    font-size: $size;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+}
+
+@mixin color-mixin($color: false, $bgColor: false) {
+  @if $color {
+    @include t.customize(theme) {
+      color: t.getValue($color);
+    }
+  }
+
+  @if $bgColor {
+    @include t.customize(theme) {
+      background-color: t.getValue($bgColor);
+    }
+  }
+}

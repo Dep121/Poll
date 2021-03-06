@@ -1,0 +1,42 @@
+/* .collapse-appear {
+  opacity: 0;
+  max-height: 0px;
+}
+
+.collapse-appear-active {
+  opacity: 1;
+  max-height: 200px;
+  transition: opacity 500ms ease-in, max-height 500ms ease-in;
+}
+
+.collapse-appear-done {
+  opacity: 1;
+  max-height: 200px;
+} */
+
+.collapse-enter {
+  transition: opacity 500ms ease-in, max-height 500ms ease-in;
+  opacity: 0;
+}
+
+.collapse-enter-active {
+  opacity: 1;
+}
+
+.collapse-enter-done {
+  opacity: 1;
+}
+
+.collapse-exit {
+  transition: opacity 500ms ease-in, max-height 500ms ease-in;
+  opacity: 1;
+}
+
+.collapse-exit-active {
+  opacity: 0;
+}
+
+/* .collapse-exit-done {
+  opacity: 0;
+  max-height: 0px;
+} */

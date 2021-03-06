@@ -1,0 +1,22 @@
+.searchContainer {
+    display: flex;
+    justify-content: center;
+    .searchBox {
+        input {
+            height: 2rem;
+            padding-left: 0.5rem;
+        }
+        .searchDropdown {
+            position: absolute;
+            text-align: left;
+            background-color: white;
+            .searchItem {
+                
+            }
+        }
+    }
+    svg {
+        width: 2rem;
+        margin-left: 2rem;
+    }
+}

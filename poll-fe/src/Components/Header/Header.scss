@@ -1,0 +1,36 @@
+// @use '../../commonStyles/theme' as t;
+@use '../../commonStyles/variables' as v;
+
+.header {
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    @include v.color-mixin(primary, on-primary);
+    @include v.fontStyle(30px, bold);
+    user-select: none;
+
+    .left {
+        width: 100px;
+        background-image: url(https://fast-poll.com/site/img/logo.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
+
+    .mid {
+        align-self: center;
+    }
+
+    .right {
+        align-self: center;
+        display: flex;
+        min-width: 20%;
+        justify-content: space-around;
+        
+        .user-details {
+            display: flex;
+            flex-direction: column;
+            @include v.fontStyle(12px, 500);
+        }
+    }
+}
